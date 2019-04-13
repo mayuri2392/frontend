@@ -16,10 +16,22 @@ return <div>
 } */
 
 const App = () => {
-  return <Email />
+  return <Button />
 }
 
+const Button = () => {
+  const astroLabs = (value) => {
+    console.log(value);
+  }
+  return <div>
+    <spam>AstroLabs</spam>
+    <ChangeColor setColor={astroLabs}/>
+  </div>
+}
 
+const ChangeColor = ({setColor}) => {
+  return <button onClick={() => {setColor('green')}}>Make me green</button>
+}
 const Email = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
